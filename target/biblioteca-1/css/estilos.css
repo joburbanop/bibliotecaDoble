@@ -1,5 +1,5 @@
 html { 
-  background: url(http://cdn.magdeleine.co/wp-content/uploads/2014/05/3jPYgeVCTWCMqjtb7Dqi_IMG_8251-1400x933.jpg) no-repeat center center fixed; 
+  background: url(https://i.pinimg.com/originals/97/57/93/975793fff4eb682dcc396c2885a13f2f.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -174,7 +174,7 @@ a:hover{
   left: 20px;
 }
 
-#forgotten{
+#register{
   position: absolute;
   font-size: 12px;
   font-family: 'Hind', sans-serif;
@@ -188,11 +188,11 @@ a:hover{
   transition: all 0.2s ease-in-out;
 }
 
-#forgotten:hover{
+#register:hover{
   color: rgba(255,255,255,.6);
 }
 
-#forgotten-container{
+#register-container{
   position: absolute;
   top: 0;
   left: 0;
