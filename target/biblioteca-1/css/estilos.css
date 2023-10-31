@@ -36,6 +36,7 @@ img{
 
 /* Login container */
 #Titulo {
+ 
   font-style: oblique;
   position: relative;
   margin-top: 10px;
@@ -112,7 +113,7 @@ img{
 
 /* Heading */
 h1{
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Quahon'; 
   position: relative;
   margin-top: 0px;
   text-align: center;
