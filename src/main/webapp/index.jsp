@@ -25,11 +25,19 @@
     <body>
        
     <div id="login-button">
+     
       <img src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png">
       </img>
     </div>
+          <div id="Titulo">
+            <h1> BIBLIOTECA VIRTUAL </h1>
+            
+        </div>
+        <div id="lema"
+        <h4> - Aprende con nosotros. -</h4>
+    </div>
     <div id="container">
-      <h1>Ingresar</h1>
+      <h1>¡Bienvenido!</h1>
       <span class="close-btn">
         <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
       </span>
