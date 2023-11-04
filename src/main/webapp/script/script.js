@@ -20,3 +20,7 @@ $('#register').click(function(){
     $("#register-container").fadeIn();
   });
 });
+
+function redirigirAotraPagina() {
+  console.log("vamos a rederigirnos con ajax")
+}

@@ -1,0 +1,4 @@
+====usuarios registrados========
+nombre: admin
+cedula: 123
+contraseña: admin

@@ -121,7 +121,12 @@ h1{
   color: #ddd;
   text-shadow: 3px 3px 10px #000;
 }
-
+.submit{
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    padding: 4px 8px;
+    background: rgba(107,255,3,0.3);
+}
 /* Inputs */
 a,
 input{
@@ -175,7 +180,10 @@ a:hover{
   position: relative;
   margin: -5px 20px;
 }
-
+#invitado-container{
+    position: relative;
+    margin: -5px 20px;
+}
 .checkbox {
   position: relative;
   cursor: pointer;
@@ -237,6 +245,32 @@ a:hover{
 
 }
 
+
+#invitado{
+
+  
+  font-style: italic;
+  position: absolute;
+  font-size: 15px;
+  font-family: 'Hind', sans-serif;
+  color: rgba(255,255,255,.9);
+  right: 150px;
+  top: 8px;
+  cursor: pointer;
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.5;
+  text-decoration: underline;
+
+
+
+}
+
+#invitado:hover{
+  color: rgba(255,255,255,.6);
+}
 #register:hover{
   color: rgba(255,255,255,.6);
 }
@@ -249,7 +283,7 @@ a:hover{
   bottom: 0;
   margin: auto;
   width: 260px;
-  height: 180px;
+  height: 320px;
   border-radius: 10px;
   background: rgba(3,3,3,0.25);
   box-shadow: 1px 1px 50px #000;
