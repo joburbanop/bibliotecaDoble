@@ -1,0 +1,12 @@
+ID: 1
+Título: Inteligencia emocional
+Autor: Daniel Goleman
+Año de lanzamiento: null
+Foto: images.png
+-----------------------
+ID: 2
+Título: Cien AÃ±os de Soledad 
+Autor: Gabriel Garcia Marquez
+Año de lanzamiento: null
+Foto: logo.jfif
+-----------------------

@@ -4,13 +4,21 @@
  */
 package servlets;
 
+import com.umariana.biblioteca.Biblioteca;
+import com.umariana.biblioteca.Libros;
+import com.umariana.biblioteca.Usuarios;
+import com.umariana.biblioteca.controlUsuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -19,66 +27,64 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "SvIngresar", urlPatterns = {"/SvIngresar"})
 public class SvIngresar extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SvIngresar</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SvIngresar at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+      
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+ 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         ServletContext context = getServletContext();
+                String usuario = request.getParameter("usuario");
+                String contrasenia = request.getParameter("contrasenia");
+                System.out.println("nombre: "+ usuario);
+                System.out.println("contraseña " + contrasenia);
+                String nombreUsuario = controlUsuario.verificarUsuarioCreado(usuario, contrasenia, context);
+                System.out.println("aqui estamos jeje");
+                System.out.println("nombre usuario "+nombreUsuario);
+                List<Libros>  tareasUsuarioActivo= new ArrayList<>();
+                
+                Usuarios usuarioActivo = controlUsuario.obtenerUsuarioActivo( usuario, contrasenia, context);
+                
+                if(nombreUsuario!=null){
+                       HttpSession session = request.getSession();
+                       
+                       session.setAttribute("nombre_usuario", nombreUsuario);
+                      
+                       session.setAttribute("cedula_usuario", contrasenia);
+                                       
+                        Biblioteca.cargarLibrosDesdeArchivo(context, nombreUsuario);
+                        //tareasUsuarioActivo=ControlTareas.cargarTareasDesdeArchivo(context, nombreUsuario);
+                        // Guarda las tareas en la sesión para que estén disponibles en tu JSP
+                        System.out.println("control ver libros: "+Biblioteca.obtenerTodosLosLibros());
+                        session.setAttribute("libros", Biblioteca.obtenerTodosLosLibros());
+
+                       
+                      
+                       request.setAttribute("nombre_usuario", nombreUsuario);
+                    
+                       request.getRequestDispatcher("biblioteca.jsp").forward(request, response);
+
+                   }else{
+                       System.out.println("usuario incorrecto");
+                       String script = "<script>alert('Usuario incorrecto'); window.location.href = 'index.jsp?nombre_usuario=" + nombreUsuario + "';</script>";
+                       response.setContentType("text/html");
+                       response.getWriter().write(script);
+                     //  request.getRequestDispatcher("index.jsp").forward(request, response);
+                   }
+              
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    
     @Override
     public String getServletInfo() {
         return "Short description";

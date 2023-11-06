@@ -1,7 +1,9 @@
-E:\listaTareasEnlazadas\biblioteca\src\main\java\com\umariana\biblioteca\controlUsuario.java
-E:\listaTareasEnlazadas\biblioteca\src\main\java\servlets\SvRegistrar.java
-E:\listaTareasEnlazadas\biblioteca\src\main\java\com\umariana\biblioteca\Usuarios.java
-E:\listaTareasEnlazadas\biblioteca\src\main\java\com\umariana\biblioteca\Libros.java
-E:\listaTareasEnlazadas\biblioteca\src\main\java\com\umariana\biblioteca\resources\JavaEE8Resource.java
-E:\listaTareasEnlazadas\biblioteca\src\main\java\com\umariana\biblioteca\Biblioteca.java
-E:\listaTareasEnlazadas\biblioteca\src\main\java\com\umariana\biblioteca\JAXRSConfiguration.java
+E:\biblioteca\biblioteca\biblioteca\src\main\java\com\umariana\biblioteca\JAXRSConfiguration.java
+E:\biblioteca\biblioteca\biblioteca\src\main\java\servlets\SvAgregarLibro.java
+E:\biblioteca\biblioteca\biblioteca\src\main\java\com\umariana\biblioteca\Usuarios.java
+E:\biblioteca\biblioteca\biblioteca\src\main\java\com\umariana\biblioteca\resources\JavaEE8Resource.java
+E:\biblioteca\biblioteca\biblioteca\src\main\java\servlets\SvIngresar.java
+E:\biblioteca\biblioteca\biblioteca\src\main\java\com\umariana\biblioteca\controlUsuario.java
+E:\biblioteca\biblioteca\biblioteca\src\main\java\com\umariana\biblioteca\Libros.java
+E:\biblioteca\biblioteca\biblioteca\src\main\java\com\umariana\biblioteca\Biblioteca.java
+E:\biblioteca\biblioteca\biblioteca\src\main\java\servlets\SvRegistrar.java

@@ -18,7 +18,7 @@ public class Usuarios {
     private String cedula;
     private String nombre_usuario;
     private String contrasenia;
-    
+    private ArrayList<Libros> libros;
 
  
      
@@ -30,9 +30,12 @@ public class Usuarios {
         this.cedula = cedula;
         this.nombre_usuario = nombre_usuario;
         this.contrasenia = contrasenia;
-        
+        this.libros = new ArrayList<>();
     }
-
+     
+    public void agregarLibro(Libros libro) {
+        libros.add(libro);
+    }
    
     public String getCedula() {
          return cedula;

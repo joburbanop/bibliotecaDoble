@@ -25,7 +25,8 @@
 
 </head>
 <body>
-
+ 
+    
     <%
         String relativePath = getServletContext().getRealPath("/data");
         String archivoA = "usuarios.txt";
@@ -61,10 +62,10 @@
             <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
         </span>
 
-        <form>
-            <input type="text" name="usuario" placeholder="Usuario">
-            <input type="password" name="contrasenia" placeholder="Contraseña">
-            <a href="#">Ingresar</a>
+        <form action="SvIngresar" method="POST">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="contrasenia" placeholder="Contraseña" required>
+             <input type="submit" value="Ingresar">
             <div id="invitado-container">
 
                 <span id="invitado" onclick="redirigirAotraPagina()">Inivtado</span>

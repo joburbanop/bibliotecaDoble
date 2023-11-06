@@ -89,14 +89,14 @@ public class controlUsuario {
     }
 
 
-    public static String verificarUsuarioCreado(String nombre, String cedula,  ServletContext context) throws IOException {
+    public static String verificarUsuarioCreado(String nombre, String contrasenia,  ServletContext context) throws IOException {
        
         cargarArchivo(context);
         //System.out.println("desde verificar nombre: "+nombre);
         //System.out.println("desde verificar nombre: "+contrasenia);
         
        for (Usuarios IUsuarios : usuriosNuevo) {
-            if (IUsuarios.getNombre_usuario().equals(nombre) && IUsuarios.getCedula().equals(cedula)) {
+            if (IUsuarios.getNombre_usuario().equals(nombre) && IUsuarios.getContrasenia().equals(contrasenia)) {
                 //System.out.println("Se verifico aqui" + IUsuarios.getNombre_usuario());
                 return IUsuarios.getNombre_usuario();
             }
