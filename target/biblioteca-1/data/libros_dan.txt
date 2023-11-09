@@ -1,6 +1,0 @@
-ID: 1
-Título: Inteligencia emocional
-Autor: Daniel Goleman 
-Año de lanzamiento: 1995
-Foto: images.png
------------------------

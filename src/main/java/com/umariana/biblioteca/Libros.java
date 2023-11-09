@@ -14,7 +14,7 @@ public class Libros {
     private String autor;
     private String anio;
     private String foto;
-    private Libros siguiente;
+    Libros siguiente,anterior;
 
     public Libros() {
     }

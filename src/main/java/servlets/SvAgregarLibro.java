@@ -8,21 +8,28 @@ import com.umariana.biblioteca.Biblioteca;
 import com.umariana.biblioteca.Libros;
 import com.umariana.biblioteca.Usuarios;
 import com.umariana.biblioteca.controlUsuario;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author danie
  */
 @WebServlet(name = "SvAgregarLibro", urlPatterns = {"/SvAgregarLibro"})
+@MultipartConfig
 public class SvAgregarLibro extends HttpServlet {
 
   
@@ -65,7 +72,37 @@ public class SvAgregarLibro extends HttpServlet {
         
         String anio = request.getParameter("anio");
         
-        String foto = request.getParameter("foto");
+        
+        /*--------------------------------------------
+         *todo lo necesario para agregar fotos
+         *-----------------------------------------*/
+        Part imagenPart = request.getPart("fotos");
+        System.out.println("imagenPart" + imagenPart);
+
+        // Nombre original del archivo
+        String fileName = imagenPart.getSubmittedFileName();
+        System.out.println("fileName: " + fileName);
+
+        // Directorio donde se almacenara el archivo
+        String uploadDirectory = getServletContext().getRealPath("imagenes");
+        System.out.println("uploadDirectory: " + uploadDirectory);
+
+        //Ruta completa del archivo
+        String filePath = uploadDirectory + File.separator + fileName;
+        System.out.println("filePath: " + filePath);
+
+        //Guardar el archivo en el sistemaa de archivos
+        try (InputStream input = imagenPart.getInputStream(); OutputStream output = new FileOutputStream(filePath)) {
+
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = input.read(buffer)) > 0) {
+                output.write(buffer, 0, length);
+            }
+        }
+        
+        String foto =fileName;
+        
         
         if(!Biblioteca.existeLibroConId(id)){
             Libros nuevoLibro = new Libros(id, titulo, autor, anio, foto);

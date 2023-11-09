@@ -14,3 +14,6 @@ contraseÃ±a: 123
 nombre: joburbanop
 cedula: 10863638979
 contraseña: 123
+nombre: lyra
+cedula: 789
+contraseña: 1237

@@ -192,10 +192,12 @@ public class Biblioteca {
 
     public static List<Libros> obtenerTodosLosLibros() {
         List<Libros> listaTodosLosLibros = new ArrayList<>();
+        
         Libros actual = cabeza; // Comenzamos desde la cabeza de la lista enlazada
 
         while (actual != null) {
             listaTodosLosLibros.add(actual);
+            System.out.println("libros a del usuarios "+ actual.getAutor());
             actual = actual.getSiguiente(); // Avanzamos al siguiente nodo en la lista
         }
 

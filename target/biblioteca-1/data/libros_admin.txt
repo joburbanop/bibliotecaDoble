@@ -1,6 +1,12 @@
 ID: 1
-Título: twenty one pilots
-Autor: Red Hot Chili Peppers
-Año de lanzamiento: dsafd
+Título: ss
+Autor: autor
+Año de lanzamiento: 2023-11-02
 Foto: _e3cd5303-f9a9-4866-beb9-3290bb5f0e96.jpeg
+-----------------------
+ID: 57464
+Título: vggjhghjb
+Autor: Red Hot Chili Peppers
+Año de lanzamiento: 2023-11-09
+Foto: hz81it1w.png
 -----------------------
