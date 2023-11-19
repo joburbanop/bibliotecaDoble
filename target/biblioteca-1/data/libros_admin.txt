@@ -1,12 +1,7 @@
-ID: 1
-TÌtulo: ss
-Autor: autor
-AÒo de lanzamiento: 2023-11-02
-Foto: _e3cd5303-f9a9-4866-beb9-3290bb5f0e96.jpeg
------------------------
-ID: 57464
-TÌtulo: vggjhghjb
-Autor: Red Hot Chili Peppers
-AÒo de lanzamiento: 2023-11-09
-Foto: hz81it1w.png
+ID: 123
+TÌtulo: El gen ego√≠sta
+Autor: Richard DawkinS
+AÒo de lanzamiento: 1900
+Foto: gen-egoista-default_webp.webp
+Estado: No disponible
 -----------------------

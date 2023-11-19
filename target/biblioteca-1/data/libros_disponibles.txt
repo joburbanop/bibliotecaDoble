@@ -1,0 +1,14 @@
+ID: 2
+TÌtulo: El futuro de nuestra mente
+Autor: Michio Kaku
+AÒo de lanzamiento: 2023
+Foto: OIP.jpeg
+Estado: Disponible
+-----------------------
+ID: 789
+TÌtulo: Brev√≠sima historia del tiempo
+Autor: Stephen Hawking
+AÒo de lanzamiento: 2000
+Foto: OIP (1).jpeg
+Estado: Disponible
+-----------------------

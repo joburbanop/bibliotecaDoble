@@ -62,14 +62,12 @@ public class SvIngresar extends HttpServlet {
                       
                        session.setAttribute("cedula_usuario", contrasenia);
                                        
-                        Biblioteca.cargarLibrosDesdeArchivo(context, nombreUsuario);
+                        Biblioteca.cargarLibrosDesdeArchivo(context);
                         //tareasUsuarioActivo=ControlTareas.cargarTareasDesdeArchivo(context, nombreUsuario);
                         // Guarda las tareas en la sesión para que estén disponibles en tu JSP
                         System.out.println("control ver libros: "+Biblioteca.obtenerTodosLosLibros());
                         session.setAttribute("libros", Biblioteca.obtenerTodosLosLibros());
 
-                       
-                      
                        request.setAttribute("nombre_usuario", nombreUsuario);
                     
                        request.getRequestDispatcher("biblioteca.jsp").forward(request, response);

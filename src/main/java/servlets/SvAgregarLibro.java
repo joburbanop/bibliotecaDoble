@@ -72,6 +72,7 @@ public class SvAgregarLibro extends HttpServlet {
         
         String anio = request.getParameter("anio");
         
+        String estado = request.getParameter("estado");
         
         /*--------------------------------------------
          *todo lo necesario para agregar fotos
@@ -105,13 +106,13 @@ public class SvAgregarLibro extends HttpServlet {
         
         
         if(!Biblioteca.existeLibroConId(id)){
-            Libros nuevoLibro = new Libros(id, titulo, autor, anio, foto);
+            Libros nuevoLibro = new Libros(id, titulo, autor, anio, foto,estado);
         
             usuarioActivo.agregarLibro(nuevoLibro);
 
             Biblioteca.agregarLibros(nuevoLibro);
 
-            Biblioteca.guardarLibrosEnArchivo(context, nombreUsuario);
+            Biblioteca.guardarLibrosEnArchivo(context);
         }
         
      

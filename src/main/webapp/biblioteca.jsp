@@ -19,6 +19,9 @@
         <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
         <link rel="stylesheet" href="css/bibliotecaStyle.css">
         <link rel="stylesheet" href="css/lightbox.css">
         <style>
@@ -153,9 +156,16 @@
                         </li>
 
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link" id = "mostrarTarea" style="color:white;">
+                            <a href="#" class="sidebar-link" id = "mostrarTusLibros" style="color:white;">
                                 <i class="fa-solid fa-eye"  style="color:white;"></i>
                                 Tus libros
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link" id = "mostrarTarea" style="color:white;">
+                                <i class="fa-solid fa-book-bookmark"  style="color:white;"></i>
+                                Libros disponibles
                             </a>
                         </li>
 
@@ -167,7 +177,7 @@
                         </li>
 
 
-                        <li class="sidebar-item1">
+                        <li class="sidebar-item">
                             <a href="index.jsp" class="sidebar-link-2" id = ""  style="color:white;">
                                 <i class="fa-solid fa-door-closed" style="color:white;"></i>
                                 Salir
@@ -199,7 +209,7 @@
                         <section id="contenidoInicio" style="margin-top: 2%; margin-left: 10%;">
 
                             <section>
-
+                                <h1 class="text-center" >Estadisticas</h1>
                                 <div class="container" style="margin-left: 10%;">
                                     <div class="row" style=" width: 100%; height: 100%;">
                                         <div class="col-md-6">
@@ -233,9 +243,9 @@
 
                                 </div>
                             </section>
-
+                            <h1 class="text-center" >Libros Populares</h1>
                             <div class="container">
-                                <h1 class="text-center">Libros Populares</h1>
+
 
                                 <div id="carouselExampleDark" class="carousel carousel-dark slide">
                                     <div class="carousel-indicators">
@@ -373,16 +383,25 @@
                                             <input type="text" name="autor" class="form-control" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-6" style="margin-top:20%">
+                                    <div class="col-md-6" style="margin-top:10%">
                                         <div class="form-group">
                                             <label for="anio">Año publicación</label>
-                                            <input type="date" name="anio" class="form-control" required>
+                                            <input type="text" name="anio" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="foto">Foto</label>
                                             <input type="file" name="fotos" class="form-control" required>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="estado">Estado</label>
+                                            <select name="estado" class="form-control" required>
+                                                <option value="Disponible">Disponible</option>
+                                                <option value="No disponible">No Disponible</option>
+                                            </select>
+                                        </div>
+
                                     </div>
                                 </div>
 
@@ -396,27 +415,40 @@
                     </div>
 
 
-                    <%--seccion tabla para visualizar las tareas agregadas --%>
+                    <%--seccion card para visualizar los libros  agregadas, dependiendo de su estado  --%>
                     <div class="col-lg-12 d-flex justify-content-center align-items-center">
                         <div>
                             <section id="tablaTarea" class="table table-striped" style="display: none; margin-left: 20%;">
                                 <h2 style="color: rgb(21, 21, 21); text-align: center; margin-top: 5%;">Galería de Libros</h2>
 
                                 <div class="container">
-                                    <div class="gallery" style="color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
+                                    <div style="color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
                                         <% List<Libros> libros = Biblioteca.obtenerTodosLosLibros();
                                             for (Libros libro : libros) {
+                                                if (libro.getEstado().equals("Disponible")) {
+
                                         %>
-                                        <div class="card" style="margin: 10px; width: 250px;">
+                                        <div class="card" style="margin: 10px; width: 250px;" >
                                             <img src="./imagenes/<%=libro.getFoto()%>" class="card-img-top" alt="Portada del Libro">
                                             <div class="card-body">
                                                 <h5 class="card-title"><%=libro.getTitulo()%></h5>
                                                 <p class="card-text">Autor: <%=libro.getAutor()%></p>
-
                                                 <p class="card-text">Año de Publicación: <%=libro.getAnio()%></p>
+                                                <p class="card-text">Estado: <%=libro.getEstado()%></p>
+
+                                                <!-- Botones de editar y eliminar -->
+
+                                                <form action="SvPedir" method="post">
+                                                    <input type="hidden" name="id" value="<%=libro.getId()%>">
+                                                    <button type="submit" class="btn btn-primary">Pedir</button>
+                                                </form>
+
+
                                             </div>
                                         </div>
                                         <%
+                                                }
+
                                             }
                                         %>
                                     </div>
@@ -425,16 +457,49 @@
                         </div>
                     </div>
 
-                   <%--seccion mostrar libros buscado  --%>
+                    <%--seccion mostrar libros pedidos --%>
+                    <div class="col-lg-12 d-flex justify-content-center align-items-center" >
+                        <div id="tusLibros" class="table table-striped" style="display: none; margin-left: 20%;">
+
+                            <h2 style="color: rgb(21, 21, 21); text-align: center; margin-top: 5%;">Tus Libros</h2>
+
+                            <div class="container">
+                                <div style="color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
+                                    <% List<Libros> tusLibros = Biblioteca.cargarDesdeArchivoPedido(context, nombreUsuario);
+                                        for (Libros libro : tusLibros) {
+
+
+                                    %>
+                                    <div class="card" style="margin: 10px; width: 250px;" >
+                                        <img src="./imagenes/<%=libro.getFoto()%>" class="card-img-top" alt="Portada del Libro">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><%=libro.getTitulo()%></h5>
+                                            <p class="card-text">Autor: <%=libro.getAutor()%></p>
+                                            <p class="card-text">Año de Publicación: <%=libro.getAnio()%></p>
+                                            <p class="card-text">Estado: <%=libro.getEstado()%></p>
+
+                                            <!-- Botones de editar y eliminar -->
+
+                                            <form action="SvCambiarEstadoLibro" method="post">
+                                                <input type="hidden" name="id" value="<%=libro.getId()%>">
+                                                <button type="submit" class="btn btn-success">Devolver</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <%
+
+                                        }
+                                    %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%--seccion mostrar libros ordenados --%>
                     <div>
 
                     </div>
-                    
-                     <%--seccion mostrar libros ordenados --%>
-                    <div>
-                        
-                    </div>
-                    
+
                 </div>
             </div>
 
@@ -442,7 +507,7 @@
             <section>
 
 
-                <!-- Modal para editar información de la tarea -->
+                <!-- Modal para editar información de la libros -->
                 <div class="modal fade" id="editModalConfirm" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg">
                         <div class="modal-content custom-modal">
@@ -498,6 +563,28 @@
             <%--Script para mostrar formulario tarea --%>                     
 
             <script>
+
+
+                $(document).ready(function () {
+                    $(".card").click(function () {
+                        var img = $(this).find("img").attr("src");
+                        var titulo = $(this).find(".card-title").text();
+                        var autor = $(this).find(".card-text:nth-child(2)").text();
+                        var anio = $(this).find(".card-text:nth-child(3)").text();
+
+                        $.fancybox.open({
+                            src: '<div style="text-align:center; padding: 15px;">' +
+                                    '<img src="' + img + '" alt="Portada del Libro" style="width: 100%;">' +
+                                    '<h5 style="margin-top: 15px;">' + titulo + '</h5>' +
+                                    '<p>' + autor + '</p>' +
+                                    '<p>' + anio + '</p>' +
+                                    '<button type="submit" class="btn btn-success">Pedir prestado</button>' +
+                                    '</div>',
+                            type: 'inline'
+                        });
+                    });
+                });
+
                 // Datos para el gráfico de barras
                 var barChartData = {
                     labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
@@ -584,11 +671,12 @@
                     var formulario = document.getElementById("formularioTarea");
                     var tabla = document.getElementById("tablaTarea");
                     var contenidoInicio = document.getElementById("contenidoInicio");
+                    var tusLibros = document.getElementById("tusLibros");
 
                     contenidoInicio.style.display = "block";
                     tabla.style.display = "none";
                     formulario.style.display = "none"
-
+                    tusLibros.style.display = "none"
 
                 });
 
@@ -596,10 +684,12 @@
                     var formulario = document.getElementById("formularioTarea");
                     var tabla = document.getElementById("tablaTarea");
                     var contenidoInicio = document.getElementById("contenidoInicio");
+                    var tusLibros = document.getElementById("tusLibros");
                     if (formulario.style.display === "none" || formulario.style.display === "") {
                         formulario.style.display = "block";
                         tabla.style.display = "none";
                         contenidoInicio.style.display = "none";
+                        tusLibros.style.display = "none"
                         document.getElementById("formularioActual").value = "tarea"; // Agregar esta línea
                     }
                 });
@@ -608,13 +698,37 @@
                     var formulario = document.getElementById("tablaTarea");
                     var tarea = document.getElementById("formularioTarea");
                     var contenidoInicio = document.getElementById("contenidoInicio");
+                    var tusLibros = document.getElementById("tusLibros");
                     if (formulario.style.display === "none" || formulario.style.display === "") {
                         formulario.style.display = "block";
                         tarea.style.display = "none";
                         contenidoInicio.style.display = "none";
+                        tusLibros.style.display = "none"
                         document.getElementById("formularioActual").value = "tabla"; // Agregar esta línea
                     }
                 });
+
+
+
+                document.getElementById("mostrarTusLibros").addEventListener("click", function () {
+                    var formulario = document.getElementById("tablaTarea");
+                    var tarea = document.getElementById("formularioTarea");
+                    var contenidoInicio = document.getElementById("contenidoInicio");
+                    var tusLibros = document.getElementById("tusLibros");
+
+                    if (tusLibros.style.display === "none" || formulario.style.display === "") {
+                        tusLibros.style.display = "block";
+                        formulario.style.display = "none";
+                        tarea.style.display = "none";
+                        contenidoInicio.style.display = "none";
+
+                        document.getElementById("formularioActual").value = "tabla"; // Agregar esta línea
+                    }
+                });
+
+
+
+
             </script>
 
 

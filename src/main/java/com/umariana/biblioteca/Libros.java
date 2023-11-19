@@ -14,17 +14,19 @@ public class Libros {
     private String autor;
     private String anio;
     private String foto;
+    private String estado;
     Libros siguiente,anterior;
 
     public Libros() {
     }
 
-    public Libros(String id, String titulo, String autor, String anio, String foto) {
+    public Libros(String id, String titulo, String autor, String anio, String foto,String estado) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.anio = anio;
         this.foto = foto;
+        this.estado=estado;
         this.siguiente = null;
     }
 
@@ -80,7 +82,21 @@ public class Libros {
         this.foto = foto;
     }
     
-    
+     public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public Libros getAnterior() {
+        return anterior;
+    }
+
+    public void setAnterior(Libros anterior) {
+        this.anterior = anterior;
+    }
     
     
     
