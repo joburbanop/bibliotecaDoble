@@ -24,102 +24,114 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
         <link rel="stylesheet" href="css/bibliotecaStyle.css">
         <link rel="stylesheet" href="css/lightbox.css">
+        
         <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        .custom-card {
+            background: #ffffff;
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(99, 82, 66, 0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+            margin: 0 auto;
+            max-width: 600px;
+        }
 
-            .custom-card {
-                background: #ffffff;
-                border: 1px solid rgb(255, 255, 255);
-                border-radius: 10px;
-                box-shadow: 0 2px 4px rgba(99, 82, 66, 0.1);
-                padding: 20px;
-                transition: transform 0.3s;
-                margin: 0 auto;
-                max-width: 600px;
-            }
+        .custom-card:hover {
+            transform: scale(1.05);
+        }
 
-            .custom-card:hover {
-                transform: scale(1.05);
-            }
+        .form-title {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
 
-            .form-title {
-                color: #333;
-                font-size: 24px;
-                margin-bottom: 20px;
-            }
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-            .form-group {
-                margin-bottom: 20px;
-            }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
 
-            label {
-                font-weight: bold;
-                display: block;
-                margin-bottom: 5px;
-            }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
 
-            .form-control {
-                width: 100%;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                transition: border-color 0.3s;
-            }
+        .form-control:focus {
+            border-color: #ff1900;
+        }
 
-            .form-control:focus {
-                border-color: #ff1900;
-            }
+        .btn-primary {
+            background: #ff9900;
+            color: #D2B48C;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
 
-            .btn-primary {
-                background: #ff9900;
-                color: #fff;
-                border: none;
-                border-radius: 5px;
-                padding: 10px 20px;
-                cursor: pointer;
-                transition: background 0.3s;
-            }
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+        .coffee-card {
+            background-color: #b3833c;
+            color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(99, 82, 66, 0.1);
+            margin-bottom: 20px; /* Adjust the margin as needed */
+        }
 
-            .btn-primary:hover {
-                background: #0056b3;
-            }
+        .coffee-card .card-header {
+            background-color: #D2B48C;
+            color: #FFF;
+            border-bottom: 1px solid #b3833c;
+        }
+        /* Additional styles for event cards */
+         .event-card {
+            background-color: #D2B48C;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(99, 82, 66, 0.1);
+            max-width: 500px;
+            display: inline-block; /* Added this property */
+            text-align: center; /* Adjusted text alignment */
+        }
 
-            /* Agregar un estilo base a las tarjetas */
-            .card {
-                width: 100%; /* Establecer el ancho de las tarjetas al 30% */
-                margin: 0 1%;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                transition: box-shadow 0.3s, transform 0.3s;
-            }
+        .event-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .event-card h5,
+        .event-card p,
+        .event-card .btn {
+            color: white;
+            text-align: center; /* Adjusted text alignment */
+        }
 
-            .card:hover {
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-                transform: scale(1.05);
-            }
+        .event-card .btn {
+            background-color: #b3833c;
+        }
 
-            /* Estilizar el encabezado de la tarjeta */
-            .card-header {
-                background-color: #007BFF;
-                color: #fff;
-                text-align: center;
-                padding: 10px;
-            }
+        .event-card .btn:hover {
+            background-color: #b3833c;
+        }
+        
+     
 
-            /* Estilizar el título y el texto en el cuerpo de la tarjeta */
-            .card-title {
-                font-size: 24px;
-                margin: 0;
-            }
-
-            .card-text {
-                font-size: 18px;
-            }
-
-            /* Personaliza colores, tamaños de fuente, márgenes, etc., según tus preferencias */
-
-
-        </style>
+    </style>
     </head>
     <body>
         <%
@@ -154,6 +166,13 @@
                                 Inicio
                             </a>
                         </li>
+                        
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link" id = "mostrarTodosLibros" style="color:white;">
+                                <i class="fa-solid fa-landmark-flag"  style="color:white;"></i>
+                                Todos los libros
+                            </a>
+                        </li>
 
                         <li class="sidebar-item">
                             <a href="#" class="sidebar-link" id = "mostrarTusLibros" style="color:white;">
@@ -178,7 +197,7 @@
 
 
                         <li class="sidebar-item">
-                            <a href="index.jsp" class="sidebar-link-2" id = ""  style="color:white;">
+                            <a href="index.jsp" class="sidebar-link-4" id = ""  style="color:white;">
                                 <i class="fa-solid fa-door-closed" style="color:white;"></i>
                                 Salir
                             </a>
@@ -209,71 +228,72 @@
                         <section id="contenidoInicio" style="margin-top: 2%; margin-left: 10%;">
 
                             <section>
-                                <h1 class="text-center" >Estadisticas</h1>
-                                <div class="container" style="margin-left: 10%;">
-                                    <div class="row" style=" width: 100%; height: 100%;">
-                                        <div class="col-md-6">
-                                            <div  class="card">
-                                                <div class="card-header">
-                                                    Estadísticas de Lectura Semanal
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">32,550 Artículos Leídos</h5>
-                                                    <canvas id="pieChart" width="400" height="200"></canvas>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-md-6">
-
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    Tiempo Promedio de Lectura
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">5.4 Minutos</h5>
-                                                    <canvas id="barChart" width="400" height="200"></canvas>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
+                     
+                               
+                             <h1 class="text-center">Estadisticas de lectura</h1>
+                            <div class="container" style="margin-left: 10%;">
+                                <div class="row">
+                                <div class="col-md-6 mb-3">
+                                <div class="card coffee-card">
+                                 <div class="card-header">
+                                    Estadísticas de Lectura Semanal
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">32,550 Artículos Leídos</h5>
+                                        <canvas id="pieChart" width="200" height="100"></canvas>
+                                </div>
+                                </div>
                                     </div>
 
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card coffee-card">
+                                            <div class="card-header">
+                                             Tiempo Promedio de Lectura
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">5.4 Minutos</h5>
+                                            <canvas id="barChart" width="200" height="100"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
                             </section>
-                            <h1 class="text-center" >Libros Populares</h1>
+                           
+                            
+                            <h1 class="text-center" >Libros para comenzar a leer</h1>
                             <div class="container">
 
-
-                                <div id="carouselExampleDark" class="carousel carousel-dark slide">
-                                    <div class="carousel-indicators">
+                             <div id="carouselExampleDark" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
                                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                    </div>
+                                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                    </ol>
                                     <div class="carousel-inner">
-                                        <div class="carousel-item active" data-bs-interval="1000">
-                                            <img src="imagenes/integrating-science_1.jpg" class="d-block w-100" alt="...">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h5>First slide label</h5>
-                                                <p>Some representative placeholder content for the first slide.</p>
-                                            </div>
+                                        <div class="carousel-item active">
+                                            <img src="imagenes/casa_de_los_espiritus_1.jpg" class="d-block w-100" alt="...">
+                                         
                                         </div>
-                                        <div class="carousel-item" data-bs-interval="1000">
-                                            <img src="imagenes/maxcy-rosenau-last.jpg" class="d-block w-100" alt="...">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h5>Second slide label</h5>
-                                                <p>Some representative placeholder content for the second slide.</p>
-                                            </div>
+                                        <div class="carousel-item" >
+                                            <img src="imagenes/isamister_1.jpg" class="d-block w-100" alt="...">
+                                          
                                         </div>
-                                        <div class="carousel-item" data-bs-interval="1000">
-                                            <img src="imagenes/narrative-ethics.jpg" class="d-block w-100" alt="...">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h5>Third slide label</h5>
-                                                <p>Some representative placeholder content for the third slide.</p>
-                                            </div>
+                                        <div class="carousel-item" >
+                                            <img src="imagenes/cortazar.jpg" class="d-block w-100" alt="...">
+                                            
+                                        </div>
+                                        
+                                          <div class="carousel-item" >
+                                            <img src="imagenes/yorobot.jpg" class="d-block w-100" alt="...">
+                                       
+                                        </div>
+                                        
+                                        <div class="carousel-item">
+                                            <img src="imagenes/muerte.jpg" class="d-block w-100" alt="...">
+                                         
                                         </div>
                                     </div>
                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -285,10 +305,10 @@
                                         <span class="visually-hidden">Next</span>
                                     </button>
                                 </div>
-
+                            
+                            
                             </div>
-
-
+                            
                             <div style="margin-top: 10%;" class="row">
                                 <div class="col-lg-12 d-flex justify-content-center align-items-center " style='margin-top: 5%;'>
                                     <h1>Eventos</h1>
@@ -296,65 +316,42 @@
 
                                 <div>
 
-                                    <div class="col-lg-12" style='margin-left: 15%;'>
-                                        <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
-                                            <div class="carousel-inner">
-                                                <div class="carousel-item active">
-                                                    <div class="row">
-                                                        <div class="col-md-5">
-                                                            <div class="card" style="width: 18rem;">
-                                                                <img src="imagen1.jpg" class="card-img-top" alt="...">
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title">Card 1</h5>
-                                                                    <p class="card-text">Some quick example text for card 1.</p>
-                                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-5">
-                                                            <div class="card" style="width: 18rem;">
-                                                                <img src="imagen2.jpg" class="card-img-top" alt="...">
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title">Card 2</h5>
-                                                                    <p class="card-text">Some quick example text for card 2.</p>
-                                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                   
+                                   <div class="row container">
 
-                                                    </div>
-                                                </div>
-
+                                        <!-- Presentaciones de autores -->
+    
+                                        <div class="col-lg-12 text-center">
+                                            <div class="event-card" style="margin-center: 15%;">
+                                                <img src="imagenes/autores.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                <h5 class="card-title" style="color: #8B4513;">Evento: Presentaciones de autores</h5>
+                                                <p class="card-text" style="color: #8B4513;">Estás cordialmente invitado. Tendremos autores invitados en una capacitación virtual este viernes 25.</p>
+                                                <a href="#" class="btn btn-primary" style="background-color: #8B4513;">Más información</a>
+                                                 </div>
                                             </div>
-
                                         </div>
 
-                                    </div>    
-
-
-                                    <div style="margin-top: 10%;" class="row container">
-
-                                        <div class="col-lg-12 d-flex justify-content-center align-items-center " style='margin-top: 5%;'>
-                                            <h1>Cultura</h1>
+                                        <!-- Juegos en línea -->
+    
+                                        <div class="col-lg-12 text-center">
+                                            <div class="event-card" style="margin-center: 15%;">
+                                                <img src="imagenes/juegos_oline.jpg" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                     <h5 class="card-title" style="color: #8B4513;">Evento: Juegos en línea</h5>
+                                                    <p class="card-text" style="color: #8B4513;">Organiza tu grupo para COMPETENCIA DE JUEGOS EDUCATIVOS VIRTUALES.</p>
+                                                    <a href="#" class="btn btn-primary" style="background-color: #8B4513;">Más información</a>
+                                                </div>
+                                            </div>
                                         </div>
-
-                                        <div class="col-lg-12">
-
-                                        </div>
-
                                     </div>
-
-
                                 </div>
-
-
                             </div>
-
                         </section>
-
-
-
                     </div>
+                </div>
+            </div>
+        </div>
 
 
                     <!-- Seccion de formulario para agregar nuevo -->
@@ -363,10 +360,10 @@
 
 
                         <form id="formularioTarea" action="/biblioteca/SvAgregarLibro" method="post" style="display: none; margin-left: 20%" enctype="multipart/form-data">
-                            <div class="custom-card">
+                            <div class="custom-card" style="background-color: #D2B48C; color: white;" >
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <h4 class="form-title">Agrega Libro</h4>
+                                        <h4 class="form-title" style="color:white">Agrega Libro</h4>
 
                                         <div class="form-group">
                                             <label for="id">Id</label>
@@ -397,15 +394,15 @@
                                         <div class="form-group">
                                             <label for="estado">Estado</label>
                                             <select name="estado" class="form-control" required>
-                                                <option value="Disponible">Disponible</option>
-                                                <option value="No disponible">No Disponible</option>
+                                                <option value="Disponible" style="color:white">Disponible</option>
+                                                <option value="No disponible" style="color:white">No Disponible</option>
                                             </select>
                                         </div>
 
                                     </div>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Agregar libro</button>
+                                <button type="submit" class="btn btn-primary " >Agregar libro</button>
                             </div>
                         </form>
 
@@ -422,7 +419,7 @@
                                 <h2 style="color: rgb(21, 21, 21); text-align: center; margin-top: 5%;">Galería de Libros</h2>
 
                                 <div class="container">
-                                    <div style="color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
+                                    <div style="background-color: #D2B48C; color: white;color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
                                         <% List<Libros> libros = Biblioteca.obtenerTodosLosLibros();
                                             for (Libros libro : libros) {
                                                 if (libro.getEstado().equals("Disponible")) {
@@ -464,7 +461,7 @@
                             <h2 style="color: rgb(21, 21, 21); text-align: center; margin-top: 5%;">Tus Libros</h2>
 
                             <div class="container">
-                                <div style="color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
+                                <div style="background-color: #D2B48C; color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
                                     <% List<Libros> tusLibros = Biblioteca.cargarDesdeArchivoPedido(context, nombreUsuario);
                                         for (Libros libro : tusLibros) {
 
@@ -495,6 +492,57 @@
                         </div>
                     </div>
 
+                    <%--seccion mostrar todos los libros --%>
+                    <div class="col-lg-12 d-flex justify-content-center align-items-center" >
+                        <div id="todosLibros" class="table table-striped" style="display: none; margin-left: 20%;">
+
+                            <h2 style="color: rgb(21, 21, 21); text-align: center; margin-top: 5%;">Galeria de libros</h2>
+
+                            <div class="container">
+                                <div style="background-color: #D2B48C; color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
+                                    <% List<Libros> todosLibros = Biblioteca.mostrarLibros(context);
+                                        
+                                        for (Libros libro : todosLibros) {
+
+
+                                    %>
+                                    <div class="card" style="margin: 10px; width: 250px;" >
+                                        <img src="./imagenes/<%=libro.getFoto()%>" class="card-img-top" alt="Portada del Libro">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><%=libro.getTitulo()%></h5>
+                                            <p class="card-text">Autor: <%=libro.getAutor()%></p>
+                                            <p class="card-text">Año de Publicación: <%=libro.getAnio()%></p>
+                                            <p class="card-text-white">Estado: <%=libro.getEstado()%></p>
+                                            
+                                            <%
+                                               if (libro.getEstado().equals("Disponible")) {
+                                                System.out.println("aqui estoy vida hpta");
+                                            %>
+                                                <p class="card-text-white bg-success">Estado: <%=libro.getEstado()%></p>
+                                            <%
+                                            } if (libro.getEstado().equals("No disponible")) {
+                                                System.out.println("mirame aqui gran hpta");
+                                            %>
+                                                <p class="card-text-white bg-danger">Estado: <%=libro.getEstado()%></p>
+                                            <%
+                                            }
+                                            %>
+
+                                           <button class="btn btn-danger" onclick="eliminarLibro('<%=libro.getId()%>')">Eliminar</button>
+                                        </div>
+                                            
+                                    </div>
+                                    <%
+
+                                        }
+                                    %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+                                
+                                
+                                
                     <%--seccion mostrar libros ordenados --%>
                     <div>
 
@@ -655,9 +703,31 @@
 
 
             <script>
+                    //funcion para eliminar libro
+                     function eliminarLibro(id) {
 
+                        var confirmar = confirm('¿Estás seguro de que deseas eliminar el libro con ID ' + id + '?');
 
+                           if (confirmar) {
+                            console.log('voy a entrar');
+                            $.ajax({
 
+                            url: '/biblioteca/SvEliminarLibro?id=' + id,
+                            
+                            method: 'POST',
+
+                            success: function () {
+                               console.log("Aqui estoy");
+                                window.location.href = 'biblioteca.jsp';
+                            },
+                               error: function () {
+                                console.log("paila");
+                            }
+                              });
+                           alert('Libro eliminado con exito');
+
+                       }
+                }
 
                 // Mostrar el contenido al cargar la página
                 window.addEventListener("load", function () {
@@ -672,11 +742,13 @@
                     var tabla = document.getElementById("tablaTarea");
                     var contenidoInicio = document.getElementById("contenidoInicio");
                     var tusLibros = document.getElementById("tusLibros");
-
+                    var todosLibros = document.getElementById("todosLibros");
+                    
                     contenidoInicio.style.display = "block";
                     tabla.style.display = "none";
-                    formulario.style.display = "none"
-                    tusLibros.style.display = "none"
+                    formulario.style.display = "none";
+                    tusLibros.style.display = "none";
+                    todosLibros.style.display = "none";
 
                 });
 
@@ -685,11 +757,14 @@
                     var tabla = document.getElementById("tablaTarea");
                     var contenidoInicio = document.getElementById("contenidoInicio");
                     var tusLibros = document.getElementById("tusLibros");
+                    var todosLibros = document.getElementById("todosLibros");
+                    
                     if (formulario.style.display === "none" || formulario.style.display === "") {
                         formulario.style.display = "block";
                         tabla.style.display = "none";
                         contenidoInicio.style.display = "none";
-                        tusLibros.style.display = "none"
+                        tusLibros.style.display = "none";
+                        todosLibros.style.display = "none";
                         document.getElementById("formularioActual").value = "tarea"; // Agregar esta línea
                     }
                 });
@@ -699,11 +774,14 @@
                     var tarea = document.getElementById("formularioTarea");
                     var contenidoInicio = document.getElementById("contenidoInicio");
                     var tusLibros = document.getElementById("tusLibros");
+                    var todosLibros = document.getElementById("todosLibros");
+                    
                     if (formulario.style.display === "none" || formulario.style.display === "") {
                         formulario.style.display = "block";
                         tarea.style.display = "none";
                         contenidoInicio.style.display = "none";
-                        tusLibros.style.display = "none"
+                        tusLibros.style.display = "none";
+                        todosLibros.style.display = "none";
                         document.getElementById("formularioActual").value = "tabla"; // Agregar esta línea
                     }
                 });
@@ -715,9 +793,28 @@
                     var tarea = document.getElementById("formularioTarea");
                     var contenidoInicio = document.getElementById("contenidoInicio");
                     var tusLibros = document.getElementById("tusLibros");
+                    var todosLibros = document.getElementById("todosLibros");
 
                     if (tusLibros.style.display === "none" || formulario.style.display === "") {
                         tusLibros.style.display = "block";
+                        formulario.style.display = "none";
+                        tarea.style.display = "none";
+                        contenidoInicio.style.display = "none";
+                        todosLibros.style.display = "none";
+                        document.getElementById("formularioActual").value = "tabla"; // Agregar esta línea
+                    }
+                });
+                
+                document.getElementById("mostrarTodosLibros").addEventListener("click", function () {
+                    var formulario = document.getElementById("tablaTarea");
+                    var tarea = document.getElementById("formularioTarea");
+                    var contenidoInicio = document.getElementById("contenidoInicio");
+                    var tusLibros = document.getElementById("tusLibros");
+                    var todosLibros = document.getElementById("todosLibros");
+                    
+                    if (todosLibros.style.display === "none" || formulario.style.display === "") {
+                        todosLibros.style.display = "block";
+                        tusLibros.style.display = "none";
                         formulario.style.display = "none";
                         tarea.style.display = "none";
                         contenidoInicio.style.display = "none";
@@ -725,7 +822,6 @@
                         document.getElementById("formularioActual").value = "tabla"; // Agregar esta línea
                     }
                 });
-
 
 
 
@@ -752,31 +848,7 @@
 
 
 
-                function eliminarTarea(titulo) {
 
-                    var confirmar = confirm('¿Estás seguro de que deseas eliminar la tarea con ID ' + titulo + '?');
-
-                    if (confirmar) {
-
-
-                        $.ajax({
-
-                            url: '/mavenproject1/SvEliminarTarea?titulo=' + titulo,
-
-                            method: 'POST',
-
-                            success: function () {
-                                console.log("Aqui estoy");
-                                window.location.href = '/mavenproject1/templates/listas.jsp';
-                            },
-                            error: function () {
-                                console.log("paila");
-                            }
-                        });
-                        alert('Tarea eliminada con exito');
-
-                    }
-                }
             </script>
 
 

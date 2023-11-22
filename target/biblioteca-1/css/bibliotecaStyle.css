@@ -99,10 +99,8 @@ body {
 
 
 .navbar {
-  background-color: #ca2d2d; /* Color de fondo de la barra de navegación */
-  padding: 10px; /* Espaciado interno */
-  
- 
+ background: linear-gradient(to left, #D2B48C, #D2B48C)!important;
+ padding: 10px; /* Espaciado interno */
 color: white; /* Color de texto */
 }
 

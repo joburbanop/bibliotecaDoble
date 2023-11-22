@@ -13,24 +13,22 @@
 
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <p class="navbar-nav me-auto mb-2 mb-lg-10" style="margin-left: 30%">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        
+                    </ul>
 
-                        Leer es una pasicion
-
-                    </p>
-
+                    <div class="navbar-text text-center me-auto ms-auto">
+                        <h2 class="fw-semibold" style="color: white;">"Leer te lleva a lugares inimaginables".</h2>
+                    </div>
 
                     <form class="d-flex" role="search" onsubmit="return openModal()">
                         <input class="form-control me-2" type="search" name="titulo_libro" placeholder="Buscar por Título" aria-label="search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
-
                 </div>
             </div>
         </nav>
-
 
         <!-- ventana Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -42,7 +40,7 @@
                     </div>
                     <div class="modal-body">
                         <div id="perro-details">
-                            <!-- Aqui se mostraran los detalles del perro -->
+                           
                         </div>
                     </div>
                     <div class="modal-footer">

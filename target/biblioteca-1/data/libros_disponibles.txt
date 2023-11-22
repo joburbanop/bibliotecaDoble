@@ -1,14 +1,84 @@
-ID: 2
-T�tulo: El futuro de nuestra mente
-Autor: Michio Kaku
-A�o de lanzamiento: 2023
-Foto: OIP.jpeg
+ID: 22
+Título: Inteligencia emocional
+Autor: Daniel Goleman
+Año de lanzamiento: 1995
+Foto: 80677.jpg
 Estado: Disponible
 -----------------------
-ID: 789
-T�tulo: Brevísima historia del tiempo
-Autor: Stephen Hawking
-A�o de lanzamiento: 2000
-Foto: OIP (1).jpeg
+ID: 22
+Título: Inteligencia emocional
+Autor: Daniel Goleman
+Año de lanzamiento: 1995
+Foto: 80677.jpg
+Estado: Disponible
+-----------------------
+ID: 67
+Título: El coronel no tiene quien le escriba
+Autor: Gabriel Garcia Marquez
+Año de lanzamiento: 1961
+Foto: 5467464886.jpg
+Estado: Disponible
+-----------------------
+ID: 22
+Título: Inteligencia emocional
+Autor: Daniel Goleman
+Año de lanzamiento: 1995
+Foto: 80677.jpg
+Estado: Disponible
+-----------------------
+ID: 22
+Título: Inteligencia emocional
+Autor: Daniel Goleman
+Año de lanzamiento: 1995
+Foto: 80677.jpg
+Estado: Disponible
+-----------------------
+ID: 67
+Título: El coronel no tiene quien le escriba
+Autor: Gabriel Garcia Marquez
+Año de lanzamiento: 1961
+Foto: 5467464886.jpg
+Estado: Disponible
+-----------------------
+ID: 22
+Título: Inteligencia emocional
+Autor: Daniel Goleman
+Año de lanzamiento: 1995
+Foto: 80677.jpg
+Estado: Disponible
+-----------------------
+ID: 22
+Título: Inteligencia emocional
+Autor: Daniel Goleman
+Año de lanzamiento: 1995
+Foto: 80677.jpg
+Estado: Disponible
+-----------------------
+ID: 67
+Título: El coronel no tiene quien le escriba
+Autor: Gabriel Garcia Marquez
+Año de lanzamiento: 1961
+Foto: 5467464886.jpg
+Estado: Disponible
+-----------------------
+ID: 22
+Título: Inteligencia emocional
+Autor: Daniel Goleman
+Año de lanzamiento: 1995
+Foto: 80677.jpg
+Estado: Disponible
+-----------------------
+ID: 22
+Título: Inteligencia emocional
+Autor: Daniel Goleman
+Año de lanzamiento: 1995
+Foto: 80677.jpg
+Estado: Disponible
+-----------------------
+ID: 67
+Título: El coronel no tiene quien le escriba
+Autor: Gabriel Garcia Marquez
+Año de lanzamiento: 1961
+Foto: 5467464886.jpg
 Estado: Disponible
 -----------------------

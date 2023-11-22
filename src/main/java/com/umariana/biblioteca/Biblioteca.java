@@ -125,7 +125,8 @@ public class Biblioteca {
 
         return listaTodosLosLibros;
     }
-
+    
+    
 
     public static void limpiarLibros() {
         cabeza = null;
@@ -315,6 +316,8 @@ public class Biblioteca {
 
     }
 
+     
+        
     public static List<Libros> cargarDesdeArchivoPedido(ServletContext context, String nombreUsuario) {
 
         List<Libros> listaLibros = new ArrayList<>();
@@ -369,7 +372,97 @@ public class Biblioteca {
 
         return listaLibros;
     }
+    public static void guardarTodosLosLibros(ServletContext context) {
+        
+        String relativePath = "/data/libros.txt";
+        String absPath = context.getRealPath(relativePath);
+        File archivoGuardar = new File(absPath);
 
+        try {
+            BufferedWriter escritor = new BufferedWriter(new FileWriter(archivoGuardar));
+
+            Libros actual = cabeza; // Usamos la cabeza de la lista enlazada
+            while (actual != null) {
+                
+                    escritor.write("ID: " + actual.getId());
+                    escritor.newLine();
+                    escritor.write("Título: " + actual.getTitulo());
+                    escritor.newLine();
+                    escritor.write("Autor: " + actual.getAutor());
+                    escritor.newLine();
+                    escritor.write("Año de lanzamiento: " + actual.getAnio());
+                    escritor.newLine();
+                    escritor.write("Foto: " + actual.getFoto());
+                    escritor.newLine();
+                    escritor.write("Estado: " + actual.getEstado());
+                    escritor.newLine();
+                    escritor.write("-----------------------");
+                    escritor.newLine();
+                
+                actual = actual.getSiguiente(); // Avanzamos al siguiente nodo en la lista
+
+                
+            }
+
+            escritor.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static List<Libros> mostrarLibros(ServletContext context) {
+
+        List<Libros> listaLibros = new ArrayList<>();
+        String relativePath = "/data/libros.txt";
+        String absPath = context.getRealPath(relativePath);
+        File archivoCargar = new File(absPath);
+        boolean tieneContenido = archivoCargar.length() != 0;
+        System.out.println("Desde carga: " + relativePath + " Verificando si tiene contenido: " + tieneContenido);
+
+        if (tieneContenido) {
+            try (BufferedReader leyendo = new BufferedReader(new FileReader(archivoCargar))) {
+                String id = null;
+                String titulo = null;
+                String autor = null;
+                String anio = null;
+                String foto = null;
+                String estado = null;
+
+                String lineaPorLinea;
+                while ((lineaPorLinea = leyendo.readLine()) != null) {
+                    if (lineaPorLinea.startsWith("ID:")) {
+                        id = lineaPorLinea.substring(lineaPorLinea.indexOf(":") + 1).trim();
+                    } else if (lineaPorLinea.startsWith("Título:")) {
+                        titulo = lineaPorLinea.substring(lineaPorLinea.indexOf(":") + 1).trim();
+                    } else if (lineaPorLinea.startsWith("Autor:")) {
+                        autor = lineaPorLinea.substring(lineaPorLinea.indexOf(":") + 1).trim();
+                    } else if (lineaPorLinea.startsWith("Año de lanzamiento:")) {
+                        anio = lineaPorLinea.substring(lineaPorLinea.indexOf(":") + 1).trim();
+                    } else if (lineaPorLinea.startsWith("Foto:")) {
+                        foto = lineaPorLinea.substring(lineaPorLinea.indexOf(":") + 1).trim();
+                    } else if (lineaPorLinea.startsWith("Estado:")) {
+                        estado = lineaPorLinea.substring(lineaPorLinea.indexOf(":") + 1).trim();
+
+                   
+                        Libros nuevaTarea = new Libros(id, titulo, autor, anio, foto, estado);
+                        System.out.println("se creo nuevo libro: " + nuevaTarea.getAnio());
+                        listaLibros.add(nuevaTarea);
+                        agregarLibros(nuevaTarea);
+
+                        id = null;
+                        titulo = null;
+                        autor = null;
+                        anio = null;
+                        foto = null;
+                        estado = null;
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return listaLibros;
+    }
     public static void eliminarArchivo(ServletContext context, String nombreUsuario) {
         String relativePath = "/data/libros_" + nombreUsuario + ".txt";
         String absPath = context.getRealPath(relativePath);

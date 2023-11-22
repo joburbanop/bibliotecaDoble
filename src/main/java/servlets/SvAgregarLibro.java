@@ -113,8 +113,16 @@ public class SvAgregarLibro extends HttpServlet {
             Biblioteca.agregarLibros(nuevoLibro);
 
             Biblioteca.guardarLibrosEnArchivo(context);
+            
+            
+         
         }
         
+        Biblioteca.guardarTodosLosLibros(context);
+        
+           
+        
+       
      
         session.setAttribute("libros", Biblioteca.obtenerTodosLosLibros());
                 
