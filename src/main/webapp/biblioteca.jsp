@@ -164,7 +164,7 @@
                     <div class="sidebar-logo">
                         <a href="#" style="color:white;">
                             <i class="fa-solid fa-door-open"></i>
-                            ¡Bienvenido <%= nombreUsuario%>!
+                            ¡Bienvenido <%= nombreUsuario%> ! :)
                         </a>
                     </div>
                     <!-- Sidebar Navigation -->
