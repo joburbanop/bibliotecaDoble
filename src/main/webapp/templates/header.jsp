@@ -8,10 +8,16 @@
 <!DOCTYPE html>
 <html>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <style>
+        .navbar {
+            background: linear-gradient(to left, #143d7a, #2b5fa3)!important;
+            padding: 10px; /* Espaciado interno */
+            color: white; /* Color de texto */
+        }
+    </style>
     <body>
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-primary">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -24,7 +30,7 @@
 
                     <form class="d-flex" role="search" onsubmit="return openModal()">
                         <input class="form-control me-2" type="search" name="titulo_libro" placeholder="Buscar por Título" aria-label="search">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        <button class="text-bg-light p-3" type="submit">Buscar</button>
                     </form>
                 </div>
             </div>

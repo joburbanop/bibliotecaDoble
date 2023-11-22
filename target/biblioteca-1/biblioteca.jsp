@@ -26,12 +26,12 @@
         <link rel="stylesheet" href="css/lightbox.css">
         
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
         .custom-card {
-            background: #ffffff;
-            border: 1px solid rgb(255, 255, 255);
+            background:  #16386b;
+            border: 1px solid rgb(52, 73, 94);
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(99, 82, 66, 0.1);
+            box-shadow: 0 2px 4px rgba(52, 73, 94, 0.5);
             padding: 20px;
             transition: transform 0.3s;
             margin: 0 auto;
@@ -72,7 +72,7 @@
 
         .btn-primary {
             background: #ff9900;
-            color: #D2B48C;
+            color: #16386b;
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
@@ -84,28 +84,29 @@
             background: #0056b3;
         }
         .coffee-card {
-            background-color: #b3833c;
-            color: #FFF;
+            background-color: white;
+            color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(99, 82, 66, 0.1);
+            box-shadow: 0 4px 8px rgba(52, 73, 94, 0.5);
             margin-bottom: 20px; /* Adjust the margin as needed */
         }
 
         .coffee-card .card-header {
-            background-color: #D2B48C;
+            background-color:  #16386b;
             color: #FFF;
             border-bottom: 1px solid #b3833c;
         }
         /* Additional styles for event cards */
          .event-card {
-            background-color: #D2B48C;
+            background-color: #16386b;
             margin: 10px;
             padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(99, 82, 66, 0.1);
+            box-shadow: 0 2px 4px rgba(52, 73, 94, 0.5);
             max-width: 500px;
             display: inline-block; /* Added this property */
             text-align: center; /* Adjusted text alignment */
+           
         }
 
         .event-card img {
@@ -129,6 +130,19 @@
             background-color: #b3833c;
         }
         
+
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 264px;
+            background: linear-gradient(to right, #143d7a, #2b5fa3);
+            box-shadow: 0 0 35px 0 rgba(52, 73, 94, 0.5);
+            z-index: 1000;
+            color: white;
+            overflow-y: auto; /* Agregar barra de desplazamiento vertical si es necesario */
+        }
      
 
     </style>
@@ -166,13 +180,7 @@
                                 Inicio
                             </a>
                         </li>
-                        
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link" id = "mostrarTodosLibros" style="color:white;">
-                                <i class="fa-solid fa-landmark-flag"  style="color:white;"></i>
-                                Todos los libros
-                            </a>
-                        </li>
+                      
 
                         <li class="sidebar-item">
                             <a href="#" class="sidebar-link" id = "mostrarTusLibros" style="color:white;">
@@ -225,7 +233,7 @@
 
 
 
-                        <section id="contenidoInicio" style="margin-top: 2%; margin-left: 10%;">
+                        <section id="contenidoInicio" style="margin-top: 2%; margin-right: 10%; margin-left: 15%;">
 
                             <section>
                      
@@ -325,9 +333,9 @@
                                             <div class="event-card" style="margin-center: 15%;">
                                                 <img src="imagenes/autores.jpg" class="card-img-top" alt="...">
                                                 <div class="card-body">
-                                                <h5 class="card-title" style="color: #8B4513;">Evento: Presentaciones de autores</h5>
-                                                <p class="card-text" style="color: #8B4513;">Estás cordialmente invitado. Tendremos autores invitados en una capacitación virtual este viernes 25.</p>
-                                                <a href="#" class="btn btn-primary" style="background-color: #8B4513;">Más información</a>
+                                                <h5 class="card-title" style="color: white;">Evento: Presentaciones de autores</h5>
+                                                <p class="card-text" style="color: white;">Estás cordialmente invitado. Tendremos autores invitados en una capacitación virtual este viernes 25.</p>
+                                                <a href="#" class="btn btn-primary" style="background-color: #464646;">Más información</a>
                                                  </div>
                                             </div>
                                         </div>
@@ -338,9 +346,9 @@
                                             <div class="event-card" style="margin-center: 15%;">
                                                 <img src="imagenes/juegos_oline.jpg" class="card-img-top" alt="...">
                                                 <div class="card-body">
-                                                     <h5 class="card-title" style="color: #8B4513;">Evento: Juegos en línea</h5>
-                                                    <p class="card-text" style="color: #8B4513;">Organiza tu grupo para COMPETENCIA DE JUEGOS EDUCATIVOS VIRTUALES.</p>
-                                                    <a href="#" class="btn btn-primary" style="background-color: #8B4513;">Más información</a>
+                                                     <h5 class="card-title" style="color: white;">Evento: Juegos en línea</h5>
+                                                    <p class="card-text" style="color: white;">Organiza tu grupo para COMPETENCIA DE JUEGOS EDUCATIVOS VIRTUALES.</p>
+                                                    <a href="#" class="btn btn-primary" style="background-color:#464646;">Más información</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -360,10 +368,10 @@
 
 
                         <form id="formularioTarea" action="/biblioteca/SvAgregarLibro" method="post" style="display: none; margin-left: 20%" enctype="multipart/form-data">
-                            <div class="custom-card" style="background-color: #D2B48C; color: white;" >
+                            <div class="custom-card" style="background-color: #f2f4f8; color: black;" >
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <h4 class="form-title" style="color:white">Agrega Libro</h4>
+                                        <h4 class="form-title">Agrega Libro</h4>
 
                                         <div class="form-group">
                                             <label for="id">Id</label>
@@ -492,54 +500,7 @@
                         </div>
                     </div>
 
-                    <%--seccion mostrar todos los libros --%>
-                    <div class="col-lg-12 d-flex justify-content-center align-items-center" >
-                        <div id="todosLibros" class="table table-striped" style="display: none; margin-left: 20%;">
-
-                            <h2 style="color: rgb(21, 21, 21); text-align: center; margin-top: 5%;">Galeria de libros</h2>
-
-                            <div class="container">
-                                <div style="background-color: #D2B48C; color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
-                                    <% List<Libros> todosLibros = Biblioteca.mostrarLibros(context);
-                                        
-                                        for (Libros libro : todosLibros) {
-
-
-                                    %>
-                                    <div class="card" style="margin: 10px; width: 250px;" >
-                                        <img src="./imagenes/<%=libro.getFoto()%>" class="card-img-top" alt="Portada del Libro">
-                                        <div class="card-body">
-                                            <h5 class="card-title"><%=libro.getTitulo()%></h5>
-                                            <p class="card-text">Autor: <%=libro.getAutor()%></p>
-                                            <p class="card-text">Año de Publicación: <%=libro.getAnio()%></p>
-                                            <p class="card-text-white">Estado: <%=libro.getEstado()%></p>
-                                            
-                                            <%
-                                               if (libro.getEstado().equals("Disponible")) {
-                                                System.out.println("aqui estoy");
-                                            %>
-                                                <p class="card-text-white bg-success">Estado: <%=libro.getEstado()%></p>
-                                            <%
-                                            } if (libro.getEstado().equals("No disponible")) {
-                                                System.out.println("mirame aqui");
-                                            %>
-                                                <p class="card-text-white bg-danger">Estado: <%=libro.getEstado()%></p>
-                                            <%
-                                            }
-                                            %>
-
-                                           <button class="btn btn-danger" onclick="eliminarLibro('<%=libro.getId()%>')">Eliminar</button>
-                                        </div>
-                                            
-                                    </div>
-                                    <%
-
-                                        }
-                                    %>
-                                </div>
-                            </div>
-                        </div>
-                    </div>            
+           
                                 
                                 
                                 
