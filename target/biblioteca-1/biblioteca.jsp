@@ -164,7 +164,7 @@
                     <div class="sidebar-logo">
                         <a href="#" style="color:white;">
                             <i class="fa-solid fa-door-open"></i>
-                            ¡Bienvenido <%= nombreUsuario%> ! :)
+                            ¡Bienvenido <%= nombreUsuario%> !
                         </a>
                     </div>
                     <!-- Sidebar Navigation -->
@@ -427,7 +427,7 @@
                                 <h2 style="color: rgb(21, 21, 21); text-align: center; margin-top: 5%;">Galería de Libros</h2>
 
                                 <div class="container">
-                                    <div style="background-color: #D2B48C; color: white;color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
+                                    <div style="background-color: #ffffff; color: white;color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
                                         <% List<Libros> libros = Biblioteca.obtenerTodosLosLibros();
                                             for (Libros libro : libros) {
                                                 if (libro.getEstado().equals("Disponible")) {
@@ -469,7 +469,7 @@
                             <h2 style="color: rgb(21, 21, 21); text-align: center; margin-top: 5%;">Tus Libros</h2>
 
                             <div class="container">
-                                <div style="background-color: #D2B48C; color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
+                                <div style="background-color: #ffffff; color: rgb(21, 21, 21); display: flex; flex-wrap: wrap; justify-content: center;">
                                     <% List<Libros> tusLibros = Biblioteca.cargarDesdeArchivoPedido(context, nombreUsuario);
                                         for (Libros libro : tusLibros) {
 

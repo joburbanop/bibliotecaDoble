@@ -88,7 +88,20 @@ public class Biblioteca {
 
         guardarLibrosEnArchivo(context);
     }
-
+    
+      public void agregarLibroNuevo(){
+       
+        Libros actual = cabeza; 
+        if(cabeza!=null){
+           
+            actual.siguiente = new Libros();
+            
+            cabeza.siguiente.anterior = cabeza; 
+        }else{
+          
+            cabeza = new Libros();
+        }
+    }
     
 
     public static void eliminarLibroPedido(Libros libroAEliminar, ServletContext context, String nombreUsuario) {

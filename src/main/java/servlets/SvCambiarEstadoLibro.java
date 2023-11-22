@@ -53,7 +53,8 @@ public class SvCambiarEstadoLibro extends HttpServlet {
         String nombreUsuario = (String) session.getAttribute("nombre_usuario");
         String cedulaUsuario = (String) session.getAttribute("cedula_usuario");
         
-        Usuarios usuarioActivo= controlUsuario.obtenerUsuarioActivo(nombreUsuario, cedulaUsuario, context);
+        System.out.print("nombre usuraio");
+        Usuarios usuarioActivo= controlUsuario.obtenerUsuarioActivo(nombreUsuario, context);
         
         if (libroDevolver != null && libroDevolver.getId().equals(id)) {
             

@@ -58,7 +58,7 @@ public class SvAgregarLibro extends HttpServlet {
         String nombreUsuario = (String) session.getAttribute("nombre_usuario");
         String cedulaUsuario = (String) session.getAttribute("cedula_usuario");
         
-        Usuarios usuarioActivo= controlUsuario.obtenerUsuarioActivo(nombreUsuario, cedulaUsuario, context);
+        Usuarios usuarioActivo= controlUsuario.obtenerUsuarioActivo(nombreUsuario, context);
         
         System.out.println(usuarioActivo.getNombre_usuario());
         

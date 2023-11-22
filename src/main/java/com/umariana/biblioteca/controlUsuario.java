@@ -26,7 +26,7 @@ public class controlUsuario {
 
 
 
-    public static void guardarUsuarios( ArrayList<Usuarios> UsuarioIngresar, ServletContext context) throws IOException{
+    public static void guardarUsuarios( Usuarios UsuarioIngresar, ServletContext context) throws IOException{
         // Obtener la ubicación del archivo "usuarios.txt" en el directorio de recursos
         String relativePath = "/data/usuarios.txt";
         String absPath = context.getRealPath(relativePath);
@@ -39,11 +39,11 @@ public class controlUsuario {
         if (archivoGuardar.exists() && archivoGuardar.length()<=0) {
             escribir.println("====usuarios registrados========");
         } else {
-            for (Usuarios usurios : UsuarioIngresar) {
-                escribir.println("nombre: " + usurios.getNombre_usuario());
-                escribir.println("cedula: " +usurios.getCedula());
-                escribir.println("contraseña: "+ usurios.getContrasenia());
-            }
+            
+                escribir.println("nombre: " + UsuarioIngresar.getNombre_usuario());
+                escribir.println("cedula: " +UsuarioIngresar.getCedula());
+                escribir.println("contraseña: "+ UsuarioIngresar.getContrasenia());
+            
         }
         escribir.close();
     }
@@ -92,11 +92,10 @@ public class controlUsuario {
     public static String verificarUsuarioCreado(String nombre, String contrasenia,  ServletContext context) throws IOException {
        
         cargarArchivo(context);
-        //System.out.println("desde verificar nombre: "+nombre);
-        //System.out.println("desde verificar nombre: "+contrasenia);
+        
         
        for (Usuarios IUsuarios : usuriosNuevo) {
-            if (IUsuarios.getNombre_usuario().equals(nombre) && IUsuarios.getContrasenia().equals(contrasenia)) {
+            if (IUsuarios.getNombre_usuario().equals(nombre)) {
                 //System.out.println("Se verifico aqui" + IUsuarios.getNombre_usuario());
                 return IUsuarios.getNombre_usuario();
             }
@@ -112,11 +111,11 @@ public class controlUsuario {
      * @param context
      * @return 
      */
-    public static Usuarios obtenerUsuarioActivo(String nombre, String cedula,ServletContext context) {
+    public static Usuarios obtenerUsuarioActivo(String nombre,ServletContext context) {
         cargarArchivo(context); 
 
         for (Usuarios usuario : usuriosNuevo) {
-            if (usuario.getNombre_usuario().equals(nombre) && usuario.getContrasenia().equals(cedula)) {
+            if (usuario.getNombre_usuario().equals(nombre)) {
                 return usuario;
             }
         }

@@ -53,7 +53,7 @@ public class SvIngresar extends HttpServlet {
                 System.out.println("nombre usuario "+nombreUsuario);
                 List<Libros>  tareasUsuarioActivo= new ArrayList<>();
                 
-                Usuarios usuarioActivo = controlUsuario.obtenerUsuarioActivo( usuario, contrasenia, context);
+                Usuarios usuarioActivo = controlUsuario.obtenerUsuarioActivo( usuario, context);
                 
                 if(nombreUsuario!=null){
                        HttpSession session = request.getSession();

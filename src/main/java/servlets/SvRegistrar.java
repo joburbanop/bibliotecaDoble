@@ -50,8 +50,9 @@ public class SvRegistrar extends HttpServlet {
         String nombreUsuario = controlUsuario.verificarUsuarioCreado(nombre, cedula, context);
         System.out.println("holi: " + nombreUsuario);
         if (nombreUsuario == null) {
+            
             UsuarioIngresar.add(usuario);
-            controlUsuario.guardarUsuarios(UsuarioIngresar, context);
+            controlUsuario.guardarUsuarios(usuario, context);
             String script = "<script>alert('Se ha registrado exitosamente.'); window.location.href = 'index.jsp?nombreUsuario=" + nombreUsuario + "';</script>";
             response.setContentType("text/html");
             response.getWriter().write(script);

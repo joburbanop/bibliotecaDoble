@@ -1,0 +1,14 @@
+ID: 1234
+Título: El coronel no tiene quien le escriba
+Autor: Gabriel Garcia Marquez
+Año de lanzamiento: 1981
+Foto: yorobot.jpg
+Estado: No disponible
+-----------------------
+ID: 65
+Título: Cronicas de una muerte anunciada
+Autor: Gabriel Garcia Marquez
+Año de lanzamiento: 1961
+Foto: muerte.jpg
+Estado: No disponible
+-----------------------
