@@ -516,12 +516,12 @@
                                             
                                             <%
                                                if (libro.getEstado().equals("Disponible")) {
-                                                System.out.println("aqui estoy vida hpta");
+                                                System.out.println("aqui estoy");
                                             %>
                                                 <p class="card-text-white bg-success">Estado: <%=libro.getEstado()%></p>
                                             <%
                                             } if (libro.getEstado().equals("No disponible")) {
-                                                System.out.println("mirame aqui gran hpta");
+                                                System.out.println("mirame aqui");
                                             %>
                                                 <p class="card-text-white bg-danger">Estado: <%=libro.getEstado()%></p>
                                             <%

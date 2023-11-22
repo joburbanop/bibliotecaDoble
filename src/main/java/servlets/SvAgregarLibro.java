@@ -104,21 +104,24 @@ public class SvAgregarLibro extends HttpServlet {
         
         String foto =fileName;
         
-        
+        Biblioteca.mostrarLibros(context);
         if(!Biblioteca.existeLibroConId(id)){
             Libros nuevoLibro = new Libros(id, titulo, autor, anio, foto,estado);
-        
+            
             usuarioActivo.agregarLibro(nuevoLibro);
 
             Biblioteca.agregarLibros(nuevoLibro);
 
             Biblioteca.guardarLibrosEnArchivo(context);
             
-            
+          
          
+        }else{
+            Libros nuevoLibro=new Libros(id, titulo, autor, anio, foto,estado);
+            Biblioteca.eliminarLibro(nuevoLibro, context);
         }
         
-        Biblioteca.guardarTodosLosLibros(context);
+        
         
            
         

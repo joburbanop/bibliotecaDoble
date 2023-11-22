@@ -164,6 +164,7 @@ public class Biblioteca {
     
  
     public static boolean existeLibroConId(String id) {
+        
         Libros actual = cabeza;
 
         while (actual != null) {
@@ -210,6 +211,8 @@ public class Biblioteca {
                     escritor.newLine();
                     escritor.write("-----------------------");
                     escritor.newLine();
+                }else{
+                    
                 }
                 actual = actual.getSiguiente(); // Avanzamos al siguiente nodo en la lista
 
@@ -372,8 +375,8 @@ public class Biblioteca {
 
         return listaLibros;
     }
-    public static void guardarTodosLosLibros(ServletContext context) {
-        
+    public static void guardarTodosLosLibros(String id, ServletContext context) {
+       
         String relativePath = "/data/libros.txt";
         String absPath = context.getRealPath(relativePath);
         File archivoGuardar = new File(absPath);
@@ -383,7 +386,7 @@ public class Biblioteca {
 
             Libros actual = cabeza; // Usamos la cabeza de la lista enlazada
             while (actual != null) {
-                
+                if(!actual.getId().equals(id)){
                     escritor.write("ID: " + actual.getId());
                     escritor.newLine();
                     escritor.write("Título: " + actual.getTitulo());
@@ -398,10 +401,11 @@ public class Biblioteca {
                     escritor.newLine();
                     escritor.write("-----------------------");
                     escritor.newLine();
+                } 
                 
                 actual = actual.getSiguiente(); // Avanzamos al siguiente nodo en la lista
 
-                
+                 
             }
 
             escritor.close();
@@ -409,8 +413,9 @@ public class Biblioteca {
             e.printStackTrace();
         }
     }
+    
     public static List<Libros> mostrarLibros(ServletContext context) {
-
+        
         List<Libros> listaLibros = new ArrayList<>();
         String relativePath = "/data/libros.txt";
         String absPath = context.getRealPath(relativePath);

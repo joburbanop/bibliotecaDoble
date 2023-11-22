@@ -1,83 +1,13 @@
-ID: 22
+ID: 45
 Título: Inteligencia emocional
-Autor: Daniel Goleman
-Año de lanzamiento: 1995
-Foto: 80677.jpg
-Estado: Disponible
------------------------
-ID: 22
-Título: Inteligencia emocional
-Autor: Daniel Goleman
-Año de lanzamiento: 1995
+Autor: Gabriel Garcia Marquez
+Año de lanzamiento: 1982
 Foto: 80677.jpg
 Estado: Disponible
 -----------------------
 ID: 67
-Título: El coronel no tiene quien le escriba
-Autor: Gabriel Garcia Marquez
-Año de lanzamiento: 1961
-Foto: 5467464886.jpg
-Estado: Disponible
------------------------
-ID: 22
-Título: Inteligencia emocional
-Autor: Daniel Goleman
-Año de lanzamiento: 1995
-Foto: 80677.jpg
-Estado: Disponible
------------------------
-ID: 22
-Título: Inteligencia emocional
-Autor: Daniel Goleman
-Año de lanzamiento: 1995
-Foto: 80677.jpg
-Estado: Disponible
------------------------
-ID: 67
-Título: El coronel no tiene quien le escriba
-Autor: Gabriel Garcia Marquez
-Año de lanzamiento: 1961
-Foto: 5467464886.jpg
-Estado: Disponible
------------------------
-ID: 22
-Título: Inteligencia emocional
-Autor: Daniel Goleman
-Año de lanzamiento: 1995
-Foto: 80677.jpg
-Estado: Disponible
------------------------
-ID: 22
-Título: Inteligencia emocional
-Autor: Daniel Goleman
-Año de lanzamiento: 1995
-Foto: 80677.jpg
-Estado: Disponible
------------------------
-ID: 67
-Título: El coronel no tiene quien le escriba
-Autor: Gabriel Garcia Marquez
-Año de lanzamiento: 1961
-Foto: 5467464886.jpg
-Estado: Disponible
------------------------
-ID: 22
-Título: Inteligencia emocional
-Autor: Daniel Goleman
-Año de lanzamiento: 1995
-Foto: 80677.jpg
-Estado: Disponible
------------------------
-ID: 22
-Título: Inteligencia emocional
-Autor: Daniel Goleman
-Año de lanzamiento: 1995
-Foto: 80677.jpg
-Estado: Disponible
------------------------
-ID: 67
-Título: El coronel no tiene quien le escriba
-Autor: Gabriel Garcia Marquez
+Título: El coronel no tiene quien le escriba 
+Autor: Daniel Goleman 
 Año de lanzamiento: 1961
 Foto: 5467464886.jpg
 Estado: Disponible
